@@ -3,7 +3,7 @@ guessesTaken=0
 number= random.randint(1,100)
 print('I am thinking of a number between 1 and 100')
 
-while guessesTaken <6:
+while guessesTaken <10:
     print('Guess')
     guess= input()
     guess= int(guess)
@@ -15,4 +15,5 @@ while guessesTaken <6:
     if guess > number:
         print ('Lower')
     if guess == number:
-        print('Correct!')
+        break
+print('Correct!')
