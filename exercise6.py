@@ -11,7 +11,7 @@ bball = pandas.read_csv("UWvMSU_1-22-13.txt", sep='\t', lineterminator='\r')
 bball2=bball.assign(totalscore="")
 print bball2
 
-
+#hallo
 
 
 
