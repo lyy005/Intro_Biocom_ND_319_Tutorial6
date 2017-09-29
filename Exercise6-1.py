@@ -1,3 +1,5 @@
+#Early working of part 1-not complete or correct
+
 import pandas
 import matplotlib.pyplot as plt
 bball=pandas.read_table('UWvMSU_1-22-13.txt',delim_whitespace=True)
