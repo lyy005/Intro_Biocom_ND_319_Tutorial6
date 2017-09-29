@@ -4,7 +4,7 @@ number= random.randint(1,100)
 print('I am thinking of a number between 1 and 100')
 
 while guessesTaken <6:
-    print('Make a guess')
+    print('Guess')
     guess= input()
     guess= int(guess)
     
