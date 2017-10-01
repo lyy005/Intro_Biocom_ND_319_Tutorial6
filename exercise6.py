@@ -13,6 +13,7 @@ bball2=bball.assign(totalscore="")
 uw_list = []
 msu_list = []
 
+#fill lists - one for each team
 for i in range(0,len(bball2),1):
     if bball2.team[i]=="UW":
         uw_list.append(i)
@@ -21,11 +22,25 @@ for i in range(0,len(bball2),1):
 print uw_list
 print msu_list
 
-for i in range(0, len(uw_list), 1):
+#add total score columns UW
+for i in range(len(uw_list)):
+    print(uw_list[i])
     if i == 0:
-        print bball2.iloc[i]
+        bball2.loc[uw_list[i], "totalscore"] = bball2.score.loc[uw_list[i]]
     else:
-        print bball2.iloc[i]
+        bball2.loc[uw_list[i], "totalscore"] =bball2.totalscore.loc[uw_list[i-1]] + bball2.score.loc[uw_list[i]]
+
+
+#add total score msu
+for i in range(len(msu_list)):
+    print(msu_list[i])
+    if i == 0:
+        bball2.loc[msu_list[i], "totalscore"] = bball2.score.loc[msu_list[i]]
+    else:
+        bball2.loc[msu_list[i], "totalscore"] =bball2.totalscore.loc[msu_list[i-1]] + bball2.score.loc[msu_list[i]]
+
+print bball2
+
 
 
 
