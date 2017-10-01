@@ -6,14 +6,20 @@ import pandas
 bball = pandas.read_csv("UWvMSU_1-22-13.txt", sep='\t', lineterminator='\r')
 
 #create blank column totalscore
-bball2=bball.assign(totalscore="")
-print (bball2)
+bball2=bball.assign(totalscore=0)
 
 #Create blank dataframe
 import numpy
 A=numpy.zeros((50,3))
 B=pandas.DataFrame(A,columns=['Time','ScoreMSU','ScoreUW'])
 Time = bball.time
+print bball2.head(n=5)
+
+for i in range(0,len(bball2),1):
+    if bball2.team[i]=="UW":
+        print "science is fun"
+    else:
+        print "Dan smells"
 
 #Steps remaining:
 #print times in the Time column of B
