@@ -37,7 +37,7 @@ for i in range(len(msu_list)):
 
 print bball2
 
-
+#jsut need to graph it!
 #actual plot
 #import matplotlib.pyplot as plt
 #plt.plot(Time,ScoreMSU,'g-',Time,ScoreUW,'gray-')
