@@ -8,7 +8,6 @@ bball = pandas.read_csv("UWvMSU_1-22-13.txt", sep='\t', lineterminator='\r')
 
 #create blank column totalscore
 bball2=bball.assign(totalscore="")
-print bball2.head(n=5)
 
 #make blank lists
 uw_list = []
@@ -21,6 +20,12 @@ for i in range(0,len(bball2),1):
        msu_list.append(i)
 print uw_list
 print msu_list
+
+for i in range(0, len(uw_list), 1):
+    if i == 0:
+        print bball2.iloc[i]
+    else:
+        print bball2.iloc[i]
 
 
 
