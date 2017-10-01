@@ -3,18 +3,30 @@
 
 #load the dataset
 import pandas
+import numpy
 bball = pandas.read_csv("UWvMSU_1-22-13.txt", sep='\t', lineterminator='\r')
 
 #create blank column totalscore
-bball2=bball.assign(totalscore=0)
+bball2=bball.assign(totalscore="")
 print bball2.head(n=5)
 
+#make blank lists
+uw_list = []
+msu_list = []
 
 for i in range(0,len(bball2),1):
     if bball2.team[i]=="UW":
-        print "science is fun"
+        uw_list.append(i)
     else:
-        print "Dan smells"
+       msu_list.append(i)
+print uw_list
+print msu_list
+
+
+
+#for x in uw list:
+# forthe second value bball2.totalscore[i]= bball2.totalscore[i-1] + bball2.score[i]
+
 
 #Steps remaining:
 #print times in the Time column of B
