@@ -3,7 +3,6 @@
 
 #load the dataset
 import pandas
-import numpy
 bball = pandas.read_csv("UWvMSU_1-22-13.txt", sep='\t', lineterminator='\r')
 
 #create blank column totalscore
@@ -37,9 +36,19 @@ for i in range(len(msu_list)):
 
 print bball2
 
-#jsut need to graph it!
-#actual plot
+from plotnine import *
+p=(ggplot(data=bball2)
+   + aes(x= "time", y= "totalscore", group= "team", color= "team")
+   + geom_line()
+   + geom_point()
+)
+
+print p
+
+
 #import matplotlib.pyplot as plt
+
+
 #plt.plot(Time,ScoreMSU,'g-',Time,ScoreUW,'gray-')
 
 #question 2
