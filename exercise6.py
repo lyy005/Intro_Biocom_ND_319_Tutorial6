@@ -28,28 +28,29 @@ for i in range(len(uw_list)):
 
 
 #add total score msu
+
 for i in range(len(msu_list)):
     if i == 0:
         bball2.loc[msu_list[i], "totalscore"] = bball2.score.loc[msu_list[i]]
     else:
-        bball2.loc[msu_list[i], "totalscore"] =bball2.totalscore.loc[msu_list[i-1]] + bball2.score.loc[msu_list[i]]
+        bball2.loc[msu_list[i], "totalscore"] =bball2.totalscore.loc[msu_list[i]]
 
-print bball2
+print (bball2)
 
+#making the plot!
 from plotnine import *
 p=(ggplot(data=bball2)
-   + aes(x= "time", y= "totalscore", group= "team", color= "team")
+   + aes(x= "time", y= "totalscore", group= 'team', color= 'team')
    + geom_line()
    + geom_point()
+   + xlab("Game Progress")
+   + ylab("Total Score")
+   + xlim(0,40)
 )
 
-print p
-
-
-#import matplotlib.pyplot as plt
-
-
-#plt.plot(Time,ScoreMSU,'g-',Time,ScoreUW,'gray-')
-
+import matplotlib.pyplot as plt
+plt.plot(df['time'],df['totalscore'],gray-')
+#print p
+print (msu_list)
 #question 2
 
