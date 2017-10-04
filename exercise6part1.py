@@ -21,3 +21,5 @@ for i in range(0,len(scores),1):
     
     B.iloc[i+1,0]=scores.iloc[i,0]
     
+import matplotlib.pyplot as plt
+plt.plot(B.time,B.UWscore,'-r',B.time,B.MSUscore,'g-')
