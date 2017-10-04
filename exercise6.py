@@ -46,11 +46,11 @@ p=(ggplot(data=bball2)
    + xlab("Game Progress")
    + ylab("Total Score")
    + xlim(0,40)
+   +scale_color_manual(values=['green','red'])
+   + theme_classic()
 )
-
-#import matplotlib.pyplot as plt
-#plt.plot(df['time'],df['totalscore'],gray-')
 print p
+
 
 #question 2
 import numpy
@@ -67,4 +67,3 @@ while True:   #Loops through three conditions
     elif guess == rand:
         print("Correct!")
         break
-
