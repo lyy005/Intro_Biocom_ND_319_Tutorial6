@@ -33,7 +33,7 @@ for i in range(len(msu_list)):
     if i == 0:
         bball2.loc[msu_list[i], "totalscore"] = bball2.score.loc[msu_list[i]]
     else:
-        bball2.loc[msu_list[i], "totalscore"] =bball2.totalscore.loc[msu_list[i]]
+        bball2.loc[msu_list[i], "totalscore"] = bball2.totalscore.loc[msu_list[i - 1]] + bball2.score.loc[msu_list[i]]
 
 print (bball2)
 
@@ -48,10 +48,9 @@ p=(ggplot(data=bball2)
    + xlim(0,40)
 )
 
-import matplotlib.pyplot as plt
-plt.plot(df['time'],df['totalscore'],gray-')
-#print p
-print (msu_list)
+#import matplotlib.pyplot as plt
+#plt.plot(df['time'],df['totalscore'],gray-')
+print p
 
 #question 2
 import numpy
