@@ -13,7 +13,7 @@ os.chdir('/Users/winghomitchell/Intro_Biocom_ND_319_Tutorial6')
 print('I am thinking of a number between 1 and 100...')
 answer = numpy.random.choice(100)
 guess = int(input('Guess?'))
-count = int(0)
+count = int(1)
 
 # While loop will iterate so as long as the user's guess is not equal to the randomly generated integer stored in answer.
 
