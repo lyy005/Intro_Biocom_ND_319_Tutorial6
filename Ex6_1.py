@@ -15,6 +15,15 @@ for i in range(0,len(score),1):
     if score.team[i] == "UW":
         temp_UW += score.score[i]
         B.UW_score[i] = temp_UW
+        B.MSU_score[i] = temp_MSU
     else:
         temp_MSU += score.score[i]
         B.MSU_score[i] = temp_MSU
+        B.UW_score[i] = temp_UW
+
+import matplotlib.pyplot as plt
+score_plot=plt.step(B.time, B.UW_score, 'r-', B.time, B.MSU_score, 'g-')
+plt.suptitle("UW vs MSU -- Jan 22, 2013")
+plt.xlabel("time")
+plt.ylabel("cumulative score")
+plt.savefig("UWvMSU_score.png")
