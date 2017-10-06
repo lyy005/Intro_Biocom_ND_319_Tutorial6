@@ -4,7 +4,7 @@ answer=np.random.choice(numbers)
 guess=0
 name= raw_input ("What is your name?")
 print("Wanna play a game %s?") %(name)
-print("Guess a number 0-100")
+print("Guess a number 1-100")
 while guess!= answer:
     guess = input ("Your guess is:")
     if guess > 0:
@@ -16,4 +16,14 @@ while guess!= answer:
         break
 else:
     print ("Congrats %s, you win....this time") %(name)
+
+
+
+
+
+
+
+
+
+
 
