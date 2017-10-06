@@ -1,0 +1,44 @@
+# Importation of packages and navigation to biocomputing directory.
+
+import numpy
+import os
+import pandas
+os.listdir('.')
+os.chdir('/Users/winghomitchell/Intro_Biocom_ND_319_Tutorial6')
+
+# Line thirteen will print a prompt for the user to read.
+# Line fourteen will store the randomly generated number between 1-100 in an variable called "answer"
+# Line fifteen will convert guess into an integer and prompt the user to enter a number.
+
+print('I am thinking of a number between 1 and 100...')
+answer = numpy.random.choice(100)
+guess = int(input('Guess?'))
+
+# While loop will iterate so as long as the user's guess is not equal to the randomly generated integer stored in answer.
+
+while guess != answer:
+
+# This block of code will execute if the guess is greater than the value stored in the answer variable. 
+# In the event that the guess is correct, the program will end.
+
+    if int(guess) > int(answer):
+        print (guess)
+        print('Lower...')
+        guess = input('Guess?')
+        
+        if int(guess) == int(answer):
+            print (guess)
+            print ('Correct!')
+            
+# This block of code will execute if the guess is less than the value stored in the answer variable. 
+# In the event that the guess is correct, the program will end.
+
+    elif int(guess) < int(answer):
+        print (guess)
+        print ('Greater...')
+        guess = input('Guess?')
+        
+        if int(guess) == int(answer):
+            print (guess)
+            print ('Correct!')
+
