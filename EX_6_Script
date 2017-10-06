@@ -1,0 +1,36 @@
+import numpy
+import os
+import matplotlib.pyplot as plt
+os.listdir('.')
+os.chdir('/Users/sampathkumarbalaji/EX_6/Intro_Biocom_ND_319_Tutorial6')
+import pandas
+
+#to parse and read txt file
+UWvMSU_txt=pandas.read_csv("UWvMSU_1-22-13.txt",delimiter='\t')
+
+#find no. of rows in the txt file
+n_row = UWvMSU_txt.shape[0]
+UW_cum_score = 0
+MSU_cum_score = 0
+
+#create a new data frame to have time and cummlative scores as columns
+A=numpy.zeros((n_row-1,3))
+cum_df=pandas.DataFrame(A,columns=['time','UW_cum_score', 'MSU_cum_score'])
+
+#parse through every row, find team name, accumulate respective cum_score variables
+
+for index in range(0,n_row-1):
+    
+    if  UWvMSU_txt.team[index] == 'UW':
+        UW_cum_score += UWvMSU_txt.score[index]
+        cum_df.UW_cum_score[index] = UW_cum_score
+        cum_df.MSU_cum_score[index] = MSU_cum_score
+        cum_df.time[index] = UWvMSU_txt.time[index]
+    else:
+        MSU_cum_score += UWvMSU_txt.score[index]
+        cum_df.MSU_cum_score[index] = MSU_cum_score
+        cum_df.UW_cum_score[index] = UW_cum_score
+        cum_df.time[index] = UWvMSU_txt.time[index]
+
+#plot graph time vs cum_scores for both the teams
+plt.plot(cum_df.time,cum_df.UW_cum_score,'r-',cum_df.time,cum_df.MSU_cum_score,'g-')

@@ -1,0 +1,52 @@
+# Importation of packages and navigation to biocomputing directory.
+
+import numpy
+import os
+import pandas
+os.listdir('.')
+os.chdir('/Users/winghomitchell/Intro_Biocom_ND_319_Tutorial6')
+
+# Line thirteen will print a prompt for the user to read.
+# Line fourteen will store the randomly generated number between 1-100 in an variable called "answer"
+# Line fifteen will convert guess into an integer and prompt the user to enter a number.
+
+print('I am thinking of a number between 1 and 100...')
+answer = numpy.random.choice(100)
+guess = int(input('Guess?'))
+count = int(1)
+
+# While loop will iterate so as long as the user's guess is not equal to the randomly generated integer stored in answer.
+
+while guess != answer:
+
+# This block of code will execute if the guess is greater than the value stored in the answer variable. 
+# In the event that the guess is correct, the program will end.
+# This version of the guessing game incorporates a simple counter to track the number of guesses required to arrive at the correct answer. 
+
+    if int(guess) > int(answer):
+        print (guess)
+        print('Lower...')
+        guess = input('Guess?')
+        count = count + 1
+        
+        if int(guess) == int(answer):
+            print (guess)
+            print ('Correct!')
+            print ('You guessed the number in %d guesses!' %(count))
+            
+# This block of code will execute if the guess is less than the value stored in the answer variable. 
+# In the event that the guess is correct, the program will end.
+# This version of the guessing game incorporates a simple counter to track the number of guesses required to arrive at the correct answer. 
+
+    elif int(guess) < int(answer):
+        print (guess)
+        print ('Greater...')
+        guess = input('Guess?')
+        count = count + 1
+        
+        if int(guess) == int(answer):
+            print (guess)
+            print ('Correct!')
+            print ('You guessed the number in %d guesses!' %(count))
+        
+# End of script. 
